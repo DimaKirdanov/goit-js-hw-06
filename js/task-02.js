@@ -14,12 +14,27 @@ const ingredients = [
 // Добавит элементу класс item.
 // После чего вставит все <li> за одну операцию в список ul#ingredients.
 
+
 const ingredientsItems = ingredients.map((ingredient) => {
-  const item = document.createElement("li");
+  const item = document.createElement('li');
   item.textContent = ingredient;
-  item.classList.add("item");
+  item.classList.add('item');
   console.log(item);
   return item;
 });
-const ingredientsEl = document.querySelector("#ingredients");
-ingredientsEl.append(...ingredientsItems);
+const ingredientsList = document.querySelector('#ingredients');
+ingredientsList.append(...ingredientsItems);
+
+
+
+
+
+// const ingredientsItems = ingredients.map((ingredient) => {
+//   const item = document.createElement("li");
+//   item.textContent = ingredient;
+//   item.classList.add("item");
+//   console.log(item);
+//   return item;
+// });
+// const ingredientsEl = document.querySelector("#ingredients");
+// ingredientsEl.append(...ingredientsItems);

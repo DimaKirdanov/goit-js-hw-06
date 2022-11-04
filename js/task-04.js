@@ -1,20 +1,22 @@
-let counterValue = 0;
-const counterEl = document.querySelector("#value");
-
-const updateData = () => {
-  counterEl.textContent = counterValue;
+const refs = {
+  value: document.querySelector('#value'),
+  increment: document.querySelector('[data-action="increment"]'),
+  decrement: document.querySelector('[data-action="decrement"]'),
 };
 
-document
-  .querySelector(`button[data-action = "decrement"]`)
-  .addEventListener("click", () => {
-    counterValue -= 1;
-    updateData();
-  });
+let counterValue  = 0;
+const render = () => {
+  refs.value.textContent = counterValue ;
+};
 
-document
-  .querySelector(`button[data-action = "increment"]`)
-  .addEventListener("click", () => {
-    counterValue += 1;
-    updateData();
-  });
+const handleDecrement = () => { 
+  counterValue  -= 1;
+  render();
+};
+const handleIncrement = () => { 
+  counterValue  += 1;
+   render();
+};
+
+refs.decrement.addEventListener('click', handleDecrement);
+refs.increment.addEventListener('click', handleIncrement);
